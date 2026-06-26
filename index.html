@@ -31,6 +31,13 @@
       </ul>
     </nav>
 
+    <a href="tel:+61130003033" class="btn btn-phone btn-nav-phone" aria-label="Call 1300 003 033">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.92.34 1.81.66 2.66a2 2 0 0 1-.45 2.11L8 9.76a16 16 0 0 0 6.24 6.24l1.27-1.27a2 2 0 0 1 2.11-.45c.85.32 1.74.54 2.66.66A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span>1300 003 033</span>
+    </a>
+
     <a href="#book-demo" class="btn btn-gold btn-nav">Book a Demo</a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
@@ -56,6 +63,14 @@
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="home">
+  <!-- Aurora / Nebula premium animation layer -->
+  <div class="hero-aurora-layer" aria-hidden="true">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+    <div class="aurora-blob aurora-blob-3"></div>
+    <div class="aurora-blob aurora-blob-4"></div>
+    <div class="aurora-blob aurora-blob-5"></div>
+  </div>
   <div class="hero-bg-grid"></div>
   <div class="hero-mesh-gradient"></div>
   <div class="hero-glow hero-glow-1"></div>
@@ -63,15 +78,8 @@
   <div class="hero-glow hero-glow-3"></div>
   <div class="hero-particles" id="heroParticles"></div>
 
-  <div class="hero-line hero-line-1"></div>
-  <div class="hero-line hero-line-2"></div>
-  <div class="hero-line hero-line-3"></div>
 
-  <div class="hero-shape hero-shape-1"></div>
-  <div class="hero-shape hero-shape-2"></div>
-  <div class="hero-shape hero-shape-3"></div>
-
-  <div class="container hero-center">
+  <div class="container hero-centered">
     <div class="hero-badge" data-reveal="fade-down">
       <span class="hero-badge-dot"></span>
       <span>AI &nbsp;&middot;&nbsp; Cyber Security &nbsp;&middot;&nbsp; Digital Marketing</span>
@@ -81,11 +89,11 @@
       Transform Your <span class="gold-text-stroke">Business</span><br>Through&nbsp;Intelligent Innovation
     </h1>
 
-    <p class="hero-sub" data-reveal="fade-up" style="--reveal-delay:0.1s">
+    <p class="hero-sub hero-sub-center" data-reveal="fade-up" style="--reveal-delay:0.1s">
       Empowering executive leaders with AI-driven solutions, enterprise-grade cybersecurity, and high-performance digital marketing strategies that drive measurable growth.
     </p>
 
-    <div class="hero-actions" data-reveal="fade-up" style="--reveal-delay:0.2s">
+    <div class="hero-actions hero-actions-center" data-reveal="fade-up" style="--reveal-delay:0.2s">
       <a href="#book-demo" class="btn btn-gold btn-lg magnetic-btn">
         <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path d="M8 2v3M16 2v3M3 8h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
         Book a Demo
@@ -95,7 +103,7 @@
       </a>
     </div>
 
-    <div class="hero-trust-row" data-reveal="fade-up" style="--reveal-delay:0.3s">
+    <div class="hero-trust-row hero-trust-center" data-reveal="fade-up" style="--reveal-delay:0.3s">
       <div class="hero-trust-item">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V5l-8-3z"/><path d="m9 11 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Enterprise-Grade Security</span>
@@ -198,7 +206,7 @@
     <div class="section-head" data-reveal="fade-up">
       <p class="section-eyebrow">What We Do</p>
       <h2 class="section-title">Our Core Expertise</h2>
-      <p class="section-sub">Three powerful disciplines, one unified strategy — engineered to accelerate your enterprise.</p>
+      <p class="section-sub">Three powerful disciplines, one unified strategy, engineered to accelerate your enterprise.</p>
     </div>
 
     <div class="card-grid services-grid">
@@ -212,7 +220,7 @@
           </div>
           <h3>AI Solutions</h3>
         </div>
-        <p class="service-desc">We design and deploy enterprise AI that transforms how your organization thinks, decides, and operates — from intelligent automation to predictive intelligence.</p>
+        <p class="service-desc">We design and deploy enterprise AI that transforms how your organization thinks, decides, and operates from intelligent automation to predictive intelligence.</p>
         <ul class="service-list">
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>AI Strategy &amp; Roadmapping</li>
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>Intelligent Process Automation</li>
@@ -220,7 +228,7 @@
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>Machine Learning Models</li>
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>Business Intelligence Dashboards</li>
         </ul>
-        <a href="#book-demo" class="service-cta-btn">Explore AI Solutions<svg viewBox="0 0 24 24" class="arrow-icon" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="about-ai.html" class="service-cta-btn">Explore AI Solutions<svg viewBox="0 0 24 24" class="arrow-icon" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </article>
 
       <article class="service-card service-card-cyber" data-reveal="fade-up" style="--delay:0.12s">
@@ -240,7 +248,7 @@
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>Real-Time Threat Monitoring</li>
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>Penetration Testing &amp; Red Team</li>
         </ul>
-        <a href="#book-demo" class="service-cta-btn">Explore Cyber Security<svg viewBox="0 0 24 24" class="arrow-icon" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="about-cyber.html" class="service-cta-btn">Explore Cyber Security<svg viewBox="0 0 24 24" class="arrow-icon" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </article>
 
       <article class="service-card service-card-marketing" data-reveal="fade-up" style="--delay:0.24s">
@@ -260,7 +268,7 @@
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>Performance Analytics &amp; Reporting</li>
           <li><svg viewBox="0 0 24 24" class="list-icon" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>Conversion Rate Optimization</li>
         </ul>
-        <a href="#book-demo" class="service-cta-btn">Explore Digital Marketing<svg viewBox="0 0 24 24" class="arrow-icon" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="about-marketing.html" class="service-cta-btn">Explore Digital Marketing<svg viewBox="0 0 24 24" class="arrow-icon" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </article>
     </div>
   </div>
@@ -337,7 +345,7 @@
   </div>
 </section>
 
-<!-- ===================== EXPERTISE / IMPACT ===================== -->
+<!-- ===================== EXPERTISE / IMPACT — TABS ===================== -->
 <section class="expertise" id="expertise">
   <div class="container">
     <div class="section-head" data-reveal="fade-up">
@@ -346,119 +354,491 @@
       <p class="section-sub">Built on a foundation of deep expertise, cutting-edge technology, and an uncompromising commitment to client outcomes.</p>
     </div>
 
-    <div class="expertise-grid" data-reveal="fade-up">
-      <div class="expertise-card expertise-card-large">
-        <div class="expertise-card-bg"></div>
-        <div class="expertise-tag">Core Philosophy</div>
-        <div class="expertise-card-header">
-          <div class="expertise-icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Results Over Reports</h3>
-        </div>
-        <p>We don't deliver slide decks — we deliver outcomes. Every engagement is benchmarked against hard business metrics, with accountability built in from day one. Our consultants are measured on your growth, not hours billed.</p>
-        <div class="expertise-metric">
-          <span class="metric-num">40%</span>
-          <span class="metric-label">Average efficiency improvement across clients</span>
-        </div>
+    <!-- Tab Navigation -->
+    <div class="edge-tabs-wrapper" data-reveal="fade-up">
+      <div class="edge-tabs-nav" role="tablist">
+        <button class="edge-tab-btn active" role="tab" aria-selected="true" data-tab="0" id="edge-tab-0">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Results</span>
+        </button>
+        <button class="edge-tab-btn" role="tab" aria-selected="false" data-tab="1" id="edge-tab-1">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 10h7l-1 10 9-12h-7z"/></svg>
+          <span>Speed</span>
+        </button>
+        <button class="edge-tab-btn" role="tab" aria-selected="false" data-tab="2" id="edge-tab-2">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V5l-8-3z"/></svg>
+          <span>Security</span>
+        </button>
+        <button class="edge-tab-btn" role="tab" aria-selected="false" data-tab="3" id="edge-tab-3">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Scale</span>
+        </button>
+        <button class="edge-tab-btn" role="tab" aria-selected="false" data-tab="4" id="edge-tab-4">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span>Technology</span>
+        </button>
+        <button class="edge-tab-btn" role="tab" aria-selected="false" data-tab="5" id="edge-tab-5">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Support</span>
+        </button>
       </div>
 
-      <div class="expertise-card">
-        <div class="expertise-tag">Speed</div>
-        <div class="expertise-card-header">
-          <div class="expertise-icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 10h7l-1 10 9-12h-7z"/></svg></div>
-          <h3>30-Day Launch Guarantee</h3>
-        </div>
-        <p>From signed agreement to deployed solution in 30 days. Our agile delivery model eliminates the long, drawn-out timelines that plague traditional consulting.</p>
-      </div>
+      <!-- Tab Panels -->
+      <div class="edge-tab-panels">
 
-      <div class="expertise-card">
-        <div class="expertise-tag">Security</div>
-        <div class="expertise-card-header">
-          <div class="expertise-icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V5l-8-3z"/></svg></div>
-          <h3>Enterprise-Grade Security</h3>
+        <!-- Tab 0: Results Over Reports -->
+        <div class="edge-tab-panel active" role="tabpanel" aria-labelledby="edge-tab-0" data-panel="0">
+          <div class="edge-panel-left">
+            <div class="edge-panel-tag">Core Philosophy</div>
+            <div class="edge-panel-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12z"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="edge-panel-title">Results Over Reports</h3>
+            <p class="edge-panel-desc">We don't deliver slide decks, we deliver outcomes. Every engagement is benchmarked against hard business metrics, with accountability built in from day one. Our consultants are measured on your growth, not hours billed.</p>
+            <div class="edge-panel-metric">
+              <span class="edge-metric-num">40%</span>
+              <span class="edge-metric-label">Average efficiency improvement across clients</span>
+            </div>
+            <a href="#book-demo" class="edge-panel-cta">Start Achieving Results <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="edge-panel-right">
+            <div class="edge-panel-visual edge-visual-results">
+              <div class="epv-stat-grid">
+                <div class="epv-stat">
+                  <span class="epv-num">40%</span>
+                  <span class="epv-lbl">Efficiency Gain</span>
+                </div>
+                <div class="epv-stat">
+                  <span class="epv-num">30d</span>
+                  <span class="epv-lbl">To First Results</span>
+                </div>
+                <div class="epv-stat">
+                  <span class="epv-num">100%</span>
+                  <span class="epv-lbl">Outcome-Based</span>
+                </div>
+                <div class="epv-stat">
+                  <span class="epv-num">0</span>
+                  <span class="epv-lbl">Generic Templates</span>
+                </div>
+              </div>
+              <div class="epv-bar-chart">
+                <div class="epv-bar-row"><span class="epv-bar-label">ROI</span><div class="epv-bar"><div class="epv-bar-fill" style="--w:88%"></div></div><span class="epv-bar-pct">88%</span></div>
+                <div class="epv-bar-row"><span class="epv-bar-label">Speed</span><div class="epv-bar"><div class="epv-bar-fill" style="--w:95%"></div></div><span class="epv-bar-pct">95%</span></div>
+                <div class="epv-bar-row"><span class="epv-bar-label">Client Sat.</span><div class="epv-bar"><div class="epv-bar-fill" style="--w:97%"></div></div><span class="epv-bar-pct">97%</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>Every solution we build is ISO 27001-aligned and SOC 2-ready. Security isn't an add-on — it's woven into the fabric of everything we deliver.</p>
-      </div>
 
-      <div class="expertise-card">
-        <div class="expertise-tag">Scale</div>
-        <div class="expertise-card-header">
-          <div class="expertise-icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Global Team of Specialists</h3>
+        <!-- Tab 1: Speed -->
+        <div class="edge-tab-panel" role="tabpanel" aria-labelledby="edge-tab-1" data-panel="1">
+          <div class="edge-panel-left">
+            <div class="edge-panel-tag">Speed</div>
+            <div class="edge-panel-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 10h7l-1 10 9-12h-7z"/></svg>
+            </div>
+            <h3 class="edge-panel-title">30-Day Launch Guarantee</h3>
+            <p class="edge-panel-desc">From signed agreement to deployed solution in 30 days. Our agile delivery model eliminates the long, drawn out timelines that plague traditional consulting. Speed without sacrificing quality or security, that's our standard.</p>
+            <ul class="edge-panel-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Kick-off within 1 week of signing</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Deployed first solution in 30 days</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Measurable impact by day 45</li>
+            </ul>
+            <a href="#book-demo" class="edge-panel-cta">Start in 30 Days <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="edge-panel-right">
+            <div class="edge-panel-visual edge-visual-speed">
+              <div class="epv-timeline">
+                <div class="epv-tl-item active"><span class="epv-tl-dot"></span><span class="epv-tl-label">Day 1 — Kickoff &amp; Discovery</span></div>
+                <div class="epv-tl-item active"><span class="epv-tl-dot"></span><span class="epv-tl-label">Day 7 — Architecture Blueprint</span></div>
+                <div class="epv-tl-item active"><span class="epv-tl-dot"></span><span class="epv-tl-label">Day 14 — Build &amp; Integration</span></div>
+                <div class="epv-tl-item"><span class="epv-tl-dot"></span><span class="epv-tl-label">Day 30 — Live Deployment</span></div>
+                <div class="epv-tl-item"><span class="epv-tl-dot"></span><span class="epv-tl-label">Day 45 — First Measurable ROI</span></div>
+              </div>
+              <div class="epv-vs">
+                <div class="epv-vs-col">
+                  <span class="epv-vs-label us">AI Consultation</span>
+                  <span class="epv-vs-val gold">30 days</span>
+                </div>
+                <div class="epv-vs-divider">vs</div>
+                <div class="epv-vs-col">
+                  <span class="epv-vs-label them">Traditional Firms</span>
+                  <span class="epv-vs-val muted">3–6 months</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>A distributed network of 80+ senior consultants spanning AI, cybersecurity, marketing, and data science — always the right expert for your challenge.</p>
-      </div>
 
-      <div class="expertise-card">
-        <div class="expertise-tag">Technology</div>
-        <div class="expertise-card-header">
-          <div class="expertise-icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <h3>Proprietary AI Platform</h3>
+        <!-- Tab 2: Security -->
+        <div class="edge-tab-panel" role="tabpanel" aria-labelledby="edge-tab-2" data-panel="2">
+          <div class="edge-panel-left">
+            <div class="edge-panel-tag">Security</div>
+            <div class="edge-panel-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V5l-8-3z"/></svg>
+            </div>
+            <h3 class="edge-panel-title">Enterprise-Grade Security</h3>
+            <p class="edge-panel-desc">Every solution we build is ISO 27001-aligned and SOC 2-ready. Security isn't an add-on, it's woven into the fabric of everything we deliver, from first line of code to production deployment.</p>
+            <ul class="edge-panel-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>ISO 27001 &amp; SOC 2 aligned</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>GDPR &amp; CCPA compliance built-in</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Zero-trust architecture by default</li>
+            </ul>
+            <a href="#book-demo" class="edge-panel-cta">Secure Your Business <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="edge-panel-right">
+            <div class="edge-panel-visual edge-visual-security">
+              <div class="epv-shield">
+                <svg viewBox="0 0 120 140" class="epv-shield-svg" aria-hidden="true">
+                  <path d="M60 8 L108 28 L108 72 C108 100 84 124 60 132 C36 124 12 100 12 72 L12 28 Z" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.35)" stroke-width="1.5"/>
+                  <path d="M60 22 L96 38 L96 70 C96 92 78 112 60 118 C42 112 24 92 24 70 L24 38 Z" fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+                  <path d="M42 68 L54 80 L78 56" stroke="#e4c76b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+              <div class="epv-cert-badges">
+                <div class="epv-cert">ISO 27001</div>
+                <div class="epv-cert">SOC 2</div>
+                <div class="epv-cert">GDPR</div>
+                <div class="epv-cert">CCPA</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>Our clients gain access to our bespoke AI orchestration platform, integrating seamlessly with your existing tech stack for zero-friction deployment.</p>
-      </div>
 
-      <div class="expertise-card">
-        <div class="expertise-tag">Support</div>
-        <div class="expertise-card-header">
-          <div class="expertise-icon-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <h3>Always-On Executive Support</h3>
+        <!-- Tab 3: Scale -->
+        <div class="edge-tab-panel" role="tabpanel" aria-labelledby="edge-tab-3" data-panel="3">
+          <div class="edge-panel-left">
+            <div class="edge-panel-tag">Scale</div>
+            <div class="edge-panel-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="edge-panel-title">Global Team of Specialists</h3>
+            <p class="edge-panel-desc">A distributed network of 80+ senior consultants spanning AI, cybersecurity, marketing, and data science always the right expert for your challenge, no matter the scale or industry.</p>
+            <div class="edge-panel-metric">
+              <span class="edge-metric-num">80+</span>
+              <span class="edge-metric-label">Senior consultants across 4 disciplines</span>
+            </div>
+            <a href="#book-demo" class="edge-panel-cta">Meet Our Experts <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="edge-panel-right">
+            <div class="edge-panel-visual edge-visual-scale">
+              <div class="epv-globe">
+                <div class="epv-globe-ring"></div>
+                <div class="epv-globe-ring epv-globe-ring-2"></div>
+                <div class="epv-globe-dots">
+                  <span class="epv-dot" style="--x:30%;--y:25%"></span>
+                  <span class="epv-dot" style="--x:60%;--y:20%"></span>
+                  <span class="epv-dot" style="--x:75%;--y:50%"></span>
+                  <span class="epv-dot" style="--x:20%;--y:60%"></span>
+                  <span class="epv-dot" style="--x:50%;--y:70%"></span>
+                  <span class="epv-dot" style="--x:80%;--y:65%"></span>
+                  <span class="epv-dot" style="--x:40%;--y:45%"></span>
+                </div>
+              </div>
+              <div class="epv-team-stats">
+                <div class="epv-ts-item"><span class="epv-ts-num">80+</span><span class="epv-ts-lbl">Consultants</span></div>
+                <div class="epv-ts-item"><span class="epv-ts-num">12</span><span class="epv-ts-lbl">Countries</span></div>
+                <div class="epv-ts-item"><span class="epv-ts-num">4</span><span class="epv-ts-lbl">Disciplines</span></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>Dedicated account leads, AI voice agents, and a 24/7 escalation path ensure you're never left waiting when critical decisions need to be made.</p>
-      </div>
-    </div>
+
+        <!-- Tab 4: Technology -->
+        <div class="edge-tab-panel" role="tabpanel" aria-labelledby="edge-tab-4" data-panel="4">
+          <div class="edge-panel-left">
+            <div class="edge-panel-tag">Technology</div>
+            <div class="edge-panel-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3 class="edge-panel-title">Proprietary AI Platform</h3>
+            <p class="edge-panel-desc">Our clients gain access to our bespoke AI orchestration platform, integrating seamlessly with your existing tech stack for zero-friction deployment. Built for enterprise scale, secured at the core.</p>
+            <ul class="edge-panel-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Integrates with AWS, Azure, GCP</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Salesforce, HubSpot, SAP connectors</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Real-time AI dashboards &amp; alerts</li>
+            </ul>
+            <a href="#book-demo" class="edge-panel-cta">See the Platform <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="edge-panel-right">
+            <div class="edge-panel-visual edge-visual-tech">
+              <div class="epv-platform">
+                <div class="epv-platform-header">AI Orchestration Platform</div>
+                <div class="epv-platform-nodes">
+                  <div class="epv-pn"><svg viewBox="0 0 24 24"><path d="M9.5 2a2.5 2.5 0 0 1 2.45 2H15a3 3 0 0 1 3 3v1a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h.05A2.5 2.5 0 0 1 9.5 2z"/></svg>AI Agents</div>
+                  <div class="epv-pn"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V5l-8-3z"/></svg>Security</div>
+                  <div class="epv-pn"><svg viewBox="0 0 24 24"><path d="M4 19h16M7 19V9m5 10V5m5 14v-7"/></svg>Analytics</div>
+                  <div class="epv-pn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Integrations</div>
+                </div>
+                <div class="epv-platform-status">
+                  <span class="epv-status-dot"></span> All systems operational
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5: Support -->
+        <div class="edge-tab-panel" role="tabpanel" aria-labelledby="edge-tab-5" data-panel="5">
+          <div class="edge-panel-left">
+            <div class="edge-panel-tag">Support</div>
+            <div class="edge-panel-icon-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3 class="edge-panel-title">Always-On Executive Support</h3>
+            <p class="edge-panel-desc">Dedicated account leads, AI voice agents, and a 24/7 escalation path ensure you're never left waiting when critical decisions need to be made. Our senior consultants are always a call away.</p>
+            <ul class="edge-panel-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>24/7 AI voice agent availability</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Dedicated senior account lead</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Zero ticket queues, instant escalation</li>
+            </ul>
+            <a href="#contact" class="edge-panel-cta">Contact Us Now <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="edge-panel-right">
+            <div class="edge-panel-visual edge-visual-support">
+              <div class="epv-support-card">
+                <div class="epv-support-header">
+                  <span class="epv-live-dot"></span>
+                  <span>AI Voice Agent — Live Now</span>
+                </div>
+                <div class="epv-wave">
+                  <span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="epv-support-stat">&lt; 3 sec avg. response time</div>
+              </div>
+              <div class="epv-support-meta">
+                <div class="epv-sm-item"><span class="epv-sm-num">24/7</span><span class="epv-sm-lbl">Always On</span></div>
+                <div class="epv-sm-item"><span class="epv-sm-num">&lt;3s</span><span class="epv-sm-lbl">Response</span></div>
+                <div class="epv-sm-item"><span class="epv-sm-num">100%</span><span class="epv-sm-lbl">Uptime SLA</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end .edge-tab-panels -->
+    </div><!-- end .edge-tabs-wrapper -->
   </div>
 </section>
 
-<!-- ===================== PROCESS ===================== -->
-<section class="process">
+<!-- ===================== PROCESS — SLIDESHOW ===================== -->
+<section class="process" id="process">
   <div class="container">
     <div class="section-head" data-reveal="fade-up">
       <p class="section-eyebrow">Our Methodology</p>
       <h2 class="section-title">Our Consultation Framework</h2>
+      <p class="section-sub">From Discovery to Measurable Outcomes, a four-step framework that blends advisory leadership with execution discipline.</p>
     </div>
 
-    <div class="framework-shell" data-reveal="fade-up">
-      <article class="framework-intro">
-        <h3>From Discovery to Measurable Outcomes</h3>
-        <p>Our framework blends advisory leadership with execution discipline so every initiative is aligned, secure, and commercially meaningful.</p>
-      </article>
+    <div class="methodology-slideshow" data-reveal="fade-up">
+      <!-- Slide Track -->
+      <div class="ms-track" id="methodologyTrack">
 
-      <div class="framework-grid">
-        <article class="framework-step" data-reveal="fade-up">
-          <span class="step-chip">01</span>
-          <h3>Executive Discovery</h3>
-          <p>Deep stakeholder sessions map current-state operations, risk posture, and growth priorities.</p>
-        </article>
-        <article class="framework-step" data-reveal="fade-up" style="--delay:0.08s">
-          <span class="step-chip">02</span>
-          <h3>Architecture &amp; Planning</h3>
-          <p>We build a practical transformation blueprint with clear milestones, governance, and ROI targets.</p>
-        </article>
-        <article class="framework-step" data-reveal="fade-up" style="--delay:0.16s">
-          <span class="step-chip">03</span>
-          <h3>Guided Implementation</h3>
-          <p>Specialist teams deploy AI, cybersecurity, and marketing workstreams in coordinated phases.</p>
-        </article>
-        <article class="framework-step" data-reveal="fade-up" style="--delay:0.24s">
-          <span class="step-chip">04</span>
-          <h3>Continuous Optimization</h3>
-          <p>Performance dashboards, quarterly reviews, and iterative upgrades keep outcomes improving over time.</p>
-        </article>
+        <div class="ms-slide active" data-slide="0">
+          <div class="ms-slide-inner">
+            <div class="ms-content">
+              <div class="ms-step-badge">Step 01 of 04</div>
+              <div class="ms-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </div>
+              <h3 class="ms-title">Executive Discovery</h3>
+              <p class="ms-desc">Deep stakeholder sessions map current-state operations, risk posture, and growth priorities. We listen first deeply before prescribing anything. This phase surfaces hidden blockers, untapped opportunities, and the metrics that will define success.</p>
+              <ul class="ms-list">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>C-suite stakeholder workshops</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Risk &amp; gap assessment</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>KPI &amp; success criteria definition</li>
+              </ul>
+            </div>
+            <div class="ms-visual">
+              <div class="ms-visual-card">
+                <div class="ms-vc-number">01</div>
+                <div class="ms-vc-label">Discovery</div>
+                <div class="ms-vc-items">
+                  <div class="ms-vc-item"><span></span>Stakeholder Interviews</div>
+                  <div class="ms-vc-item"><span></span>Tech Audit</div>
+                  <div class="ms-vc-item"><span></span>Risk Mapping</div>
+                  <div class="ms-vc-item"><span></span>Goal Setting</div>
+                </div>
+                <div class="ms-vc-footer">Duration: 1–5 days</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ms-slide" data-slide="1">
+          <div class="ms-slide-inner">
+            <div class="ms-content">
+              <div class="ms-step-badge">Step 02 of 04</div>
+              <div class="ms-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <h3 class="ms-title">Architecture &amp; Planning</h3>
+              <p class="ms-desc">We build a practical transformation blueprint with clear milestones, governance, and ROI targets. Every decision is grounded in commercial reality, no blue sky thinking, no unrealistic timelines. Just a solid, executable plan.</p>
+              <ul class="ms-list">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Solution architecture design</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>30/60/90-day milestone roadmap</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>ROI model &amp; governance framework</li>
+              </ul>
+            </div>
+            <div class="ms-visual">
+              <div class="ms-visual-card">
+                <div class="ms-vc-number">02</div>
+                <div class="ms-vc-label">Blueprint</div>
+                <div class="ms-vc-items">
+                  <div class="ms-vc-item"><span></span>Architecture Design</div>
+                  <div class="ms-vc-item"><span></span>Milestone Roadmap</div>
+                  <div class="ms-vc-item"><span></span>ROI Projections</div>
+                  <div class="ms-vc-item"><span></span>Security Review</div>
+                </div>
+                <div class="ms-vc-footer">Duration: 3–7 days</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ms-slide" data-slide="2">
+          <div class="ms-slide-inner">
+            <div class="ms-content">
+              <div class="ms-step-badge">Step 03 of 04</div>
+              <div class="ms-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3 class="ms-title">Guided Implementation</h3>
+              <p class="ms-desc">Specialist teams deploy AI, cybersecurity, and marketing workstreams in coordinated phases. Our engineers work alongside your team, knowledge transfer is built in, so you own the outcomes, not just the deliverables.</p>
+              <ul class="ms-list">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Parallel workstream deployment</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Live progress dashboard</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Weekly C-suite briefings</li>
+              </ul>
+            </div>
+            <div class="ms-visual">
+              <div class="ms-visual-card">
+                <div class="ms-vc-number">03</div>
+                <div class="ms-vc-label">Execution</div>
+                <div class="ms-vc-items">
+                  <div class="ms-vc-item"><span></span>AI Deployment</div>
+                  <div class="ms-vc-item"><span></span>Security Hardening</div>
+                  <div class="ms-vc-item"><span></span>Marketing Launch</div>
+                  <div class="ms-vc-item"><span></span>Team Training</div>
+                </div>
+                <div class="ms-vc-footer">Duration: Days 7–30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ms-slide" data-slide="3">
+          <div class="ms-slide-inner">
+            <div class="ms-content">
+              <div class="ms-step-badge">Step 04 of 04</div>
+              <div class="ms-icon-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 19V9m5 10V5m5 14v-7"/></svg>
+              </div>
+              <h3 class="ms-title">Continuous Optimization</h3>
+              <p class="ms-desc">Performance dashboards, quarterly reviews, and iterative upgrades keep outcomes improving over time. We don't disappear after launch, this is where most of the value is created, and we're fully committed to the long game.</p>
+              <ul class="ms-list">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Real-time KPI dashboards</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Quarterly strategic reviews</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Continuous model retraining &amp; upgrades</li>
+              </ul>
+            </div>
+            <div class="ms-visual">
+              <div class="ms-visual-card">
+                <div class="ms-vc-number">04</div>
+                <div class="ms-vc-label">Optimize</div>
+                <div class="ms-vc-items">
+                  <div class="ms-vc-item"><span></span>Live Dashboards</div>
+                  <div class="ms-vc-item"><span></span>Quarterly Reviews</div>
+                  <div class="ms-vc-item"><span></span>Model Upgrades</div>
+                  <div class="ms-vc-item"><span></span>ROI Reporting</div>
+                </div>
+                <div class="ms-vc-footer">Ongoing — Forever</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end .ms-track -->
+
+      <!-- Controls -->
+      <div class="ms-controls">
+        <button class="ms-btn ms-prev" id="msPrev" aria-label="Previous step">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="ms-dots" id="msDots">
+          <button class="ms-dot active" data-slide="0" aria-label="Step 1"></button>
+          <button class="ms-dot" data-slide="1" aria-label="Step 2"></button>
+          <button class="ms-dot" data-slide="2" aria-label="Step 3"></button>
+          <button class="ms-dot" data-slide="3" aria-label="Step 4"></button>
+        </div>
+        <button class="ms-btn ms-next" id="msNext" aria-label="Next step">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
-    </div>
+    </div><!-- end .methodology-slideshow -->
   </div>
 </section>
 
-<!-- ===================== CTA ===================== -->
-<section class="cta">
-  <div class="cta-glow"></div>
-  <div class="cta-mesh"></div>
-  <div class="container cta-inner" data-reveal="fade-up">
-    <h2>Ready to Future-Proof Your Business?</h2>
-    <p>Partner with industry experts and unlock the full potential of AI, cybersecurity, and digital transformation.</p>
-    <div class="hero-actions">
-      <a href="#book-demo" class="btn btn-gold btn-lg">Book a Demo</a>
-      <a href="#contact" class="btn btn-ghost btn-lg">Contact Us</a>
+<!-- ===================== CTA — GOLD LUXURY ===================== -->
+<section class="cta-luxury" id="cta-luxury">
+  <!-- Animated gold background layers -->
+  <div class="cta-lux-bg"></div>
+  <div class="cta-lux-noise"></div>
+  <div class="cta-lux-rays"></div>
+  <div class="cta-lux-shimmer"></div>
+  <!-- Floating gold orbs -->
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="cta-orb cta-orb-2"></div>
+  <div class="cta-orb cta-orb-3"></div>
+  <!-- Gold grid lines -->
+  <div class="cta-gold-grid"></div>
+  <!-- Horizontal streak lines -->
+  <div class="cta-streak cta-streak-1"></div>
+  <div class="cta-streak cta-streak-2"></div>
+
+  <div class="container cta-lux-inner" data-reveal="fade-up">
+    <!-- Premium badge -->
+    <div class="cta-lux-badge">
+      <svg viewBox="0 0 24 24" class="cta-lux-badge-icon" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V5l-8-3z"/><path d="m9 11 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Enterprise-Ready &middot; Trusted by Leaders</span>
+    </div>
+
+    <h2 class="cta-lux-title">
+      Ready to Future Proof<br><span class="cta-gold-word">Your Business?</span>
+    </h2>
+    <p class="cta-lux-sub">Partner with industry experts and unlock the full potential of AI, cybersecurity, and digital transformation. The future belongs to those who move first.</p>
+
+    <!-- Gold divider -->
+    <div class="cta-lux-divider">
+      <span></span><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span></span>
+    </div>
+
+    <div class="cta-lux-actions">
+      <a href="#book-demo" class="btn-lux-primary">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3M16 2v3M3 8h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+        Book a Demo
+      </a>
+      <a href="#contact" class="btn-lux-ghost">Contact Us
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- Trust row -->
+    <div class="cta-lux-trust">
+      <div class="cta-trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 9.5 4.5-1 8-4.5 8-9.5V5l-8-3z"/></svg>
+        <span>Enterprise Security</span>
+      </div>
+      <div class="cta-trust-sep"></div>
+      <div class="cta-trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 10h7l-1 10 9-12h-7z"/></svg>
+        <span>30-Day Launch</span>
+      </div>
+      <div class="cta-trust-sep"></div>
+      <div class="cta-trust-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>24/7 Support</span>
+      </div>
     </div>
   </div>
 </section>
@@ -539,10 +919,10 @@
     <div class="inq-header">
       <div class="inq-live-chip">
         <span class="pulse-dot"></span>
-        <span>Live Now &mdash; Always On</span>
+        <span>Live Now, Always On</span>
       </div>
       <h2 class="inq-title">24/7 Executive Support,<br><span class="gold-text-stroke">Whenever You Need It</span></h2>
-      <p class="inq-sub">Our AI Voice Agent and senior consultant team are on standby around the clock &mdash; no tickets, no queues, no waiting.</p>
+      <p class="inq-sub">Our AI Voice Agent and senior consultant team are on standby around the clock no tickets, no queues, no waiting.</p>
     </div>
 
     <div class="voice-wave" aria-hidden="true">

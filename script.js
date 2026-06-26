@@ -199,19 +199,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------- Subtle parallax on hero visual ---------------- */
-  const visualCore = document.querySelector('.visual-core');
-  const heroSection = document.querySelector('.hero');
-  if (visualCore && heroSection && window.matchMedia('(pointer: fine)').matches) {
-    heroSection.addEventListener('mousemove', (e) => {
-      const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 14;
-      const y = (e.clientY / innerHeight - 0.5) * 14;
-      visualCore.style.transform = `translate(${x}px, ${y}px)`;
+  /* ---------------- Our Edge — Tabs ---------------- */
+  const edgeTabBtns = document.querySelectorAll('.edge-tab-btn');
+  const edgeTabPanels = document.querySelectorAll('.edge-tab-panel');
+
+  if (edgeTabBtns.length) {
+    edgeTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabIndex = btn.getAttribute('data-tab');
+
+        // Deactivate all
+        edgeTabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        edgeTabPanels.forEach(p => p.classList.remove('active'));
+
+        // Activate selected
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const panel = document.querySelector(`.edge-tab-panel[data-panel="${tabIndex}"]`);
+        if (panel) panel.classList.add('active');
+      });
     });
-    heroSection.addEventListener('mouseleave', () => {
-      visualCore.style.transform = 'translate(0,0)';
+  }
+
+  /* ---------------- Methodology Slideshow ---------------- */
+  const msTrack     = document.getElementById('methodologyTrack');
+  const msPrev      = document.getElementById('msPrev');
+  const msNext      = document.getElementById('msNext');
+  const msDots      = document.querySelectorAll('.ms-dot');
+  const msSlides    = document.querySelectorAll('.ms-slide');
+  let currentSlide  = 0;
+  let msAutoTimer   = null;
+
+  const goToSlide = (index) => {
+    msSlides.forEach(s => s.classList.remove('active'));
+    msDots.forEach(d => d.classList.remove('active'));
+
+    currentSlide = (index + msSlides.length) % msSlides.length;
+    msSlides[currentSlide].classList.add('active');
+    msDots[currentSlide].classList.add('active');
+  };
+
+  const startAutoAdvance = () => {
+    clearInterval(msAutoTimer);
+    msAutoTimer = setInterval(() => goToSlide(currentSlide + 1), 6000);
+  };
+
+  if (msSlides.length) {
+    msPrev && msPrev.addEventListener('click', () => { goToSlide(currentSlide - 1); startAutoAdvance(); });
+    msNext && msNext.addEventListener('click', () => { goToSlide(currentSlide + 1); startAutoAdvance(); });
+
+    msDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.getAttribute('data-slide'), 10));
+        startAutoAdvance();
+      });
     });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const slideshow = document.querySelector('.methodology-slideshow');
+      if (slideshow && slideshow.matches(':hover')) {
+        if (e.key === 'ArrowLeft') { goToSlide(currentSlide - 1); startAutoAdvance(); }
+        if (e.key === 'ArrowRight') { goToSlide(currentSlide + 1); startAutoAdvance(); }
+      }
+    });
+
+    startAutoAdvance();
   }
 
 });
