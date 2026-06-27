@@ -245,13 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (msSlides.length) {
-    msPrev && msPrev.addEventListener('click', () => { goToSlide(currentSlide - 1); startAutoAdvance(); });
-    msNext && msNext.addEventListener('click', () => { goToSlide(currentSlide + 1); startAutoAdvance(); });
+    msPrev && msPrev.addEventListener('click', () => { goToSlide(currentSlide - 1); });
+    msNext && msNext.addEventListener('click', () => { goToSlide(currentSlide + 1); });
 
     msDots.forEach(dot => {
       dot.addEventListener('click', () => {
         goToSlide(parseInt(dot.getAttribute('data-slide'), 10));
-        startAutoAdvance();
       });
     });
 
@@ -259,12 +258,185 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       const slideshow = document.querySelector('.methodology-slideshow');
       if (slideshow && slideshow.matches(':hover')) {
-        if (e.key === 'ArrowLeft') { goToSlide(currentSlide - 1); startAutoAdvance(); }
-        if (e.key === 'ArrowRight') { goToSlide(currentSlide + 1); startAutoAdvance(); }
+        if (e.key === 'ArrowLeft') { goToSlide(currentSlide - 1); }
+        if (e.key === 'ArrowRight') { goToSlide(currentSlide + 1); }
       }
     });
 
-    startAutoAdvance();
+    // Touch/swipe support
+    let msStartX = 0;
+    const msTrackEl = document.getElementById('methodologyTrack');
+    if (msTrackEl) {
+      msTrackEl.addEventListener('touchstart', e => { msStartX = e.touches[0].clientX; }, { passive: true });
+      msTrackEl.addEventListener('touchend', e => {
+        const diff = msStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          diff > 0 ? goToSlide(currentSlide + 1) : goToSlide(currentSlide - 1);
+        }
+      }, { passive: true });
+    }
+
+    // Auto-advance is DISABLED — user controls only
+    // To re-enable: uncomment the line below
+    // startAutoAdvance();
   }
 
 });
+
+/* =================================================================
+   GOLDEN STAR SECTION BREAK — Canvas particle animation
+   ================================================================= */
+(function initStarBreaks() {
+  const canvases = document.querySelectorAll('.star-fall-canvas');
+  if (!canvases.length) return;
+
+  // Gold star color palette
+  const GOLD_COLORS = [
+    'rgba(228,199,107,',   // gold-light
+    'rgba(201,168,76,',    // gold
+    'rgba(245,223,150,',   // gold-hover
+    'rgba(255,215,0,',     // bright gold
+    'rgba(184,149,42,',    // dark gold
+  ];
+
+  class Star {
+    constructor(canvasW, canvasH) {
+      this.canvasW = canvasW;
+      this.canvasH = canvasH;
+      this.reset(true);
+    }
+
+    reset(initial) {
+      this.x = Math.random() * this.canvasW;
+      this.y = initial ? Math.random() * -this.canvasH * 0.5 - 10 : -12;
+      this.size = 3 + Math.random() * 5;       // star size 3–8px
+      this.speed = 0.6 + Math.random() * 1.2;  // fall speed
+      this.drift = (Math.random() - 0.5) * 0.5; // horizontal drift
+      this.opacity = 0;
+      this.maxOpacity = 0.5 + Math.random() * 0.5;
+      this.fadeIn = 0.02 + Math.random() * 0.03;
+      this.fadeOut = 0.01 + Math.random() * 0.02;
+      this.fading = false;
+      this.rotation = Math.random() * Math.PI * 2;
+      this.rotationSpeed = (Math.random() - 0.5) * 0.04;
+      this.colorIdx = Math.floor(Math.random() * GOLD_COLORS.length);
+      this.twinklePhase = Math.random() * Math.PI * 2;
+      this.twinkleSpeed = 0.03 + Math.random() * 0.04;
+    }
+
+    update() {
+      this.y += this.speed;
+      this.x += this.drift;
+      this.rotation += this.rotationSpeed;
+      this.twinklePhase += this.twinkleSpeed;
+
+      if (!this.fading && this.opacity < this.maxOpacity) {
+        this.opacity = Math.min(this.opacity + this.fadeIn, this.maxOpacity);
+      }
+
+      if (this.y > this.canvasH * 0.7) this.fading = true;
+
+      if (this.fading) {
+        this.opacity -= this.fadeOut;
+      }
+
+      return this.opacity > 0 && this.y < this.canvasH + 20;
+    }
+
+    draw(ctx) {
+      const twinkle = 0.85 + 0.15 * Math.sin(this.twinklePhase);
+      const alpha = Math.max(0, this.opacity * twinkle);
+      const color = GOLD_COLORS[this.colorIdx];
+
+      ctx.save();
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rotation);
+      ctx.globalAlpha = alpha;
+
+      // Draw 5-pointed star shape
+      const outerR = this.size;
+      const innerR = this.size * 0.4;
+      const points = 5;
+      ctx.beginPath();
+      for (let i = 0; i < points * 2; i++) {
+        const angle = (i * Math.PI) / points - Math.PI / 2;
+        const r = i % 2 === 0 ? outerR : innerR;
+        const sx = Math.cos(angle) * r;
+        const sy = Math.sin(angle) * r;
+        i === 0 ? ctx.moveTo(sx, sy) : ctx.lineTo(sx, sy);
+      }
+      ctx.closePath();
+
+      // Gradient fill
+      const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, outerR);
+      grad.addColorStop(0, color + '1)');
+      grad.addColorStop(0.5, color + (alpha * 0.8).toFixed(2) + ')');
+      grad.addColorStop(1, color + '0)');
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Glow effect
+      ctx.shadowColor = color + '0.9)';
+      ctx.shadowBlur = outerR * 3;
+      ctx.fill();
+
+      ctx.restore();
+    }
+  }
+
+  canvases.forEach(canvas => {
+    const container = canvas.parentElement;
+    let stars = [];
+    let animId = null;
+    let isVisible = false;
+
+    const resize = () => {
+      canvas.width  = container.offsetWidth;
+      canvas.height = container.offsetHeight;
+      stars.forEach(s => { s.canvasW = canvas.width; s.canvasH = canvas.height; });
+    };
+
+    const initStars = () => {
+      const density = Math.floor(canvas.width / 28);
+      const count = Math.max(12, Math.min(density, 55));
+      stars = Array.from({ length: count }, () => new Star(canvas.width, canvas.height));
+    };
+
+    const render = () => {
+      if (!isVisible) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = stars.length - 1; i >= 0; i--) {
+        const alive = stars[i].update();
+        stars[i].draw(ctx);
+        if (!alive) {
+          stars[i].reset(false);
+        }
+      }
+      animId = requestAnimationFrame(render);
+    };
+
+    // Intersection observer to only animate when visible
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animId) {
+          render();
+        } else if (!isVisible && animId) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      });
+    }, { threshold: 0 });
+
+    resize();
+    initStars();
+    observer.observe(container);
+
+    window.addEventListener('resize', () => {
+      resize();
+      initStars();
+    }, { passive: true });
+  });
+})();
