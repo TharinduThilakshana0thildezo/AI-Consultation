@@ -39,9 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ---------------- Smooth scroll for in-page anchors ---------------- */
+  /* #book-demo redirects to the CTA luxury section (Ready to Future Proof) */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      const targetId = anchor.getAttribute('href');
+      let targetId = anchor.getAttribute('href');
+      // Redirect #book-demo to the CTA luxury section
+      if (targetId === '#book-demo') targetId = '#cta-luxury';
       if (targetId.length > 1) {
         const target = document.querySelector(targetId);
         if (target) {

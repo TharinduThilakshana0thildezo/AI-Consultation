@@ -160,36 +160,101 @@ section { position: relative; }
 }
 .btn-lg { padding: 18px 44px; font-size: 13px; }
 .btn-nav { padding: 10px 22px; font-size: 11px; }
-.btn-nav { margin-left: -6px; }
+
+/* ── Nav actions group: phone + book-a-demo ── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Premium phone button ── */
 .btn-phone {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 9px 16px 9px 12px;
   border-radius: 999px;
-  background: rgba(18, 28, 35, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  /* Dark base with subtle gold-tinted border */
+  background: linear-gradient(
+    135deg,
+    rgba(12, 10, 3, 0.96) 0%,
+    rgba(24, 19, 6, 0.92) 60%,
+    rgba(18, 14, 4, 0.96) 100%
+  );
+  border: 1px solid rgba(201, 168, 76, 0.38);
   color: var(--text-ivory);
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   line-height: 1;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  transition: transform .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease);
+  font-family: var(--font-ui);
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.12),
+    0 4px 18px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 240, 160, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease),
+    background 0.3s var(--ease);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.btn-phone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(245, 217, 139, 0.08) 50%,
+    transparent 65%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  transition: background-position 0.55s ease;
+  pointer-events: none;
 }
 .btn-phone svg {
   width: 14px;
   height: 14px;
-  stroke: currentColor;
+  stroke: #c9a84c;
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   flex-shrink: 0;
+  filter: drop-shadow(0 0 4px rgba(201, 168, 76, 0.5));
+  transition: transform 0.3s ease;
+}
+.btn-phone span {
+  background: linear-gradient(135deg, #e8c96a 0%, #f5df96 50%, #c9a84c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
 }
 .btn-phone:hover {
-  transform: translateY(-1px);
-  border-color: rgba(201, 168, 76, 0.28);
-  background: rgba(23, 34, 41, 0.95);
+  transform: translateY(-2px);
+  border-color: rgba(201, 168, 76, 0.65);
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.25),
+    0 8px 28px rgba(201, 168, 76, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 240, 160, 0.12);
 }
+.btn-phone:hover::before {
+  background-position: 200% 0;
+}
+.btn-phone:hover svg {
+  transform: rotate(-10deg) scale(1.1);
+}
+
 
 /* =================================================================
    HEADER
@@ -2439,6 +2504,7 @@ section { position: relative; }
   gap: 0;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 32px;
 }
 .cta-trust-item {
   display: flex;
@@ -3097,7 +3163,7 @@ section { position: relative; }
 }
 
 @media (max-width: 900px) {
-  .main-nav, .btn-nav, .btn-nav-phone { display: none; }
+  .main-nav, .btn-nav, .btn-nav-phone, .nav-actions { display: none; }
   .menu-toggle { display: flex; }
   .services-grid { grid-template-columns: 1fr; }
   .book-demo-grid { grid-template-columns: 1fr; }
@@ -3498,5 +3564,219 @@ section { position: relative; }
   }
   .clc-title { font-size: 16px; }
   .clc-badge { right: 48px; }
+}
+
+/* ============================================================
+   GOLD PILL BUTTONS — Premium, Small, Luxury
+   ============================================================ */
+
+/* Override cards container for pill layout */
+.cta-live-cards:has(.gold-pill-btn) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+/* Base pill button */
+.gold-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 22px 0 6px;
+  height: 48px;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  isolation: isolate;
+
+  /* Gold-plated background */
+  background: linear-gradient(
+    135deg,
+    #2a1f04 0%,
+    #3d2e06 20%,
+    #c9a84c 40%,
+    #f5d98b 55%,
+    #c9a84c 70%,
+    #3d2e06 85%,
+    #2a1f04 100%
+  );
+  background-size: 200% 100%;
+  animation: goldShift 4s ease-in-out infinite alternate;
+
+  /* Engraved gold border */
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.6),
+    0 0 0 2px rgba(245, 217, 139, 0.15),
+    0 4px 20px rgba(201, 168, 76, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 240, 170, 0.35),
+    inset 0 -1px 0 rgba(80, 55, 5, 0.6);
+
+  transition:
+    transform 0.35s cubic-bezier(.22,1,.36,1),
+    box-shadow 0.35s cubic-bezier(.22,1,.36,1),
+    background-position 0.35s ease;
+}
+
+@keyframes goldShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Inner shimmer sweep */
+.gold-pill-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 248, 200, 0.45) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  transition: background-position 0.6s ease;
+  pointer-events: none;
+}
+
+/* Deep inner glow layer */
+.gold-pill-btn::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 40% 30%, rgba(255, 248, 180, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.gold-pill-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 0 0 1px rgba(245, 217, 139, 0.85),
+    0 0 0 2px rgba(201, 168, 76, 0.25),
+    0 8px 32px rgba(201, 168, 76, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 248, 200, 0.5),
+    inset 0 -1px 0 rgba(80, 55, 5, 0.5);
+}
+
+.gold-pill-btn:hover::before {
+  background-position: 200% 0;
+}
+
+.gold-pill-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Icon wrapper inside pill */
+.gpb-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 240, 160, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: transform 0.3s ease;
+}
+
+.gold-pill-btn:hover .gpb-icon-wrap {
+  transform: scale(1.1);
+}
+
+.gpb-icon-wrap svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #f5d98b;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 3px rgba(245, 217, 139, 0.6));
+}
+
+/* Button label text */
+.gpb-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1a1200;
+  font-family: var(--font-ui);
+  text-shadow:
+    0 1px 0 rgba(255, 248, 200, 0.6),
+    0 -1px 0 rgba(80, 55, 5, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+/* Live pulse dot for call button */
+.gpb-live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+  animation: gpbPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+  margin-left: -2px;
+}
+
+@keyframes gpbPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+  50%       { box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+}
+
+/* Variant: Call — slightly greener tint on icon */
+.gold-pill-btn--call .gpb-icon-wrap svg {
+  stroke: #a8f5c8;
+}
+
+/* Variant: Email — same gold base */
+.gold-pill-btn--email .gpb-icon-wrap svg {
+  stroke: #f5d98b;
+}
+
+/* Variant: Demo — brighter gold shimmer */
+.gold-pill-btn--demo {
+  background: linear-gradient(
+    135deg,
+    #2a1f04 0%,
+    #4a3608 18%,
+    #d4aa50 38%,
+    #fce8a0 55%,
+    #d4aa50 72%,
+    #4a3608 88%,
+    #2a1f04 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .cta-live-cards:has(.gold-pill-btn) {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .gold-pill-btn {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
 }
 
