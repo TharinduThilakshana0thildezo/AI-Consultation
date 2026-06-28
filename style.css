@@ -406,22 +406,39 @@ section { position: relative; }
   width: 900px; height: 900px;
   background: radial-gradient(circle, rgba(201,168,76,.14), transparent 60%);
   top: -300px; right: -250px;
-  animation: drift1 22s ease-in-out infinite;
+  animation: drift1 38s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 .hero-glow-2 {
   width: 600px; height: 600px;
   background: radial-gradient(circle, rgba(20,60,100,.28), transparent 65%);
   bottom: -200px; left: -150px;
-  animation: drift2 28s ease-in-out infinite;
+  animation: drift2 44s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 4s;
 }
 .hero-glow-3 {
   width: 350px; height: 350px;
   background: radial-gradient(circle, rgba(201,168,76,.08), transparent 70%);
   top: 45%; left: 38%;
-  animation: drift1 18s ease-in-out infinite 6s;
+  animation: drift3 36s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 8s;
 }
-@keyframes drift1 { 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(-28px,28px); } }
-@keyframes drift2 { 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(28px,-20px); } }
+@keyframes drift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  20%      { transform: translate(-90px, 70px) scale(1.06); }
+  40%      { transform: translate(-160px, 140px) scale(0.96); }
+  60%      { transform: translate(-70px, 200px) scale(1.08); }
+  80%      { transform: translate(50px, 90px) scale(1.02); }
+}
+@keyframes drift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(120px, -80px) scale(1.08); }
+  50%      { transform: translate(200px, 20px) scale(0.94); }
+  75%      { transform: translate(80px, 120px) scale(1.05); }
+}
+@keyframes drift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30%      { transform: translate(-100px, -60px) scale(1.1); }
+  55%      { transform: translate(80px, 100px) scale(0.92); }
+  80%      { transform: translate(140px, -40px) scale(1.06); }
+}
 
 /* =================================================================
    HERO — AURORA / NEBULA PREMIUM ANIMATION (Swimlane-style)
@@ -450,7 +467,7 @@ section { position: relative; }
     rgba(10, 20, 80, 0.08) 60%,
     transparent 80%);
   filter: blur(80px);
-  animation: auroraFloat1 20s ease-in-out infinite;
+  animation: auroraFloat1 45s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 /* Blob 2 — Indigo/violet, top-right */
@@ -463,7 +480,7 @@ section { position: relative; }
     rgba(30, 10, 80, 0.06) 65%,
     transparent 85%);
   filter: blur(90px);
-  animation: auroraFloat2 26s ease-in-out infinite 3s;
+  animation: auroraFloat2 52s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 5s;
 }
 
 /* Blob 3 — Warm rose-gold, center-right */
@@ -476,7 +493,7 @@ section { position: relative; }
     rgba(140, 40, 80, 0.04) 65%,
     transparent 85%);
   filter: blur(100px);
-  animation: auroraFloat3 32s ease-in-out infinite 6s;
+  animation: auroraFloat3 48s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 10s;
 }
 
 /* Blob 4 — Warm amber/gold, bottom-center */
@@ -489,7 +506,7 @@ section { position: relative; }
     rgba(140, 100, 30, 0.04) 65%,
     transparent 85%);
   filter: blur(90px);
-  animation: auroraFloat4 24s ease-in-out infinite 9s;
+  animation: auroraFloat4 40s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 14s;
 }
 
 /* Blob 5 — Deep teal/emerald, bottom-left, subtle */
@@ -502,41 +519,55 @@ section { position: relative; }
     rgba(2, 80, 60, 0.03) 65%,
     transparent 85%);
   filter: blur(110px);
-  animation: auroraFloat2 36s ease-in-out infinite 12s;
+  animation: auroraFloat5 56s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite 18s;
 }
 
 @keyframes auroraFloat1 {
-  0%   { transform: translate(0px, 0px) scale(1); opacity: 0.9; }
-  20%  { transform: translate(80px, 50px) scale(1.12); opacity: 1; }
-  40%  { transform: translate(40px, 100px) scale(0.94); opacity: 0.85; }
-  60%  { transform: translate(-50px, 60px) scale(1.08); opacity: 0.95; }
-  80%  { transform: translate(-30px, 20px) scale(1.03); opacity: 1; }
-  100% { transform: translate(0px, 0px) scale(1); opacity: 0.9; }
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.85; }
+  12%  { transform: translate(140px, 60px) scale(1.08); opacity: 0.95; }
+  25%  { transform: translate(260px, 130px) scale(1.14); opacity: 1; }
+  38%  { transform: translate(190px, 240px) scale(0.94); opacity: 0.88; }
+  50%  { transform: translate(70px, 300px) scale(1.06); opacity: 0.92; }
+  62%  { transform: translate(-120px, 220px) scale(1.1); opacity: 0.98; }
+  75%  { transform: translate(-80px, 90px) scale(0.92); opacity: 0.82; }
+  88%  { transform: translate(90px, 35px) scale(1.04); opacity: 0.9; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.85; }
 }
 @keyframes auroraFloat2 {
-  0%   { transform: translate(0px, 0px) scale(1); opacity: 1; }
-  25%  { transform: translate(-70px, 80px) scale(1.1); opacity: 0.8; }
-  50%  { transform: translate(-20px, 40px) scale(0.92); opacity: 0.95; }
-  75%  { transform: translate(60px, 20px) scale(1.06); opacity: 0.88; }
-  100% { transform: translate(0px, 0px) scale(1); opacity: 1; }
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  15%  { transform: translate(-130px, 110px) scale(1.12); opacity: 1; }
+  30%  { transform: translate(-240px, 190px) scale(0.94); opacity: 0.82; }
+  45%  { transform: translate(-110px, 280px) scale(1.08); opacity: 0.95; }
+  60%  { transform: translate(90px, 220px) scale(1.16); opacity: 0.88; }
+  75%  { transform: translate(180px, 90px) scale(0.96); opacity: 0.92; }
+  90%  { transform: translate(50px, -50px) scale(1.05); opacity: 0.98; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
 }
 @keyframes auroraFloat3 {
-  0%   { transform: translate(0px, 0px) scale(1) rotate(0deg); opacity: 0.8; }
-  30%  { transform: translate(-90px, -60px) scale(1.15) rotate(10deg); opacity: 1; }
-  60%  { transform: translate(50px, 80px) scale(0.9) rotate(-8deg); opacity: 0.85; }
-  100% { transform: translate(0px, 0px) scale(1) rotate(0deg); opacity: 0.8; }
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.78; }
+  20%  { transform: translate(-170px, -90px) scale(1.12) rotate(6deg); opacity: 0.95; }
+  40%  { transform: translate(-300px, 50px) scale(0.9) rotate(-4deg); opacity: 0.85; }
+  55%  { transform: translate(-130px, 180px) scale(1.16) rotate(8deg); opacity: 1; }
+  70%  { transform: translate(110px, 140px) scale(0.94) rotate(-6deg); opacity: 0.88; }
+  85%  { transform: translate(70px, -70px) scale(1.08) rotate(3deg); opacity: 0.92; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.78; }
 }
 @keyframes auroraFloat4 {
-  0%   { transform: translate(0px, 0px) scale(1); opacity: 0.9; }
-  35%  { transform: translate(100px, -80px) scale(1.15); opacity: 1; }
-  70%  { transform: translate(-40px, 50px) scale(0.93); opacity: 0.85; }
-  100% { transform: translate(0px, 0px) scale(1); opacity: 0.9; }
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.88; }
+  18%  { transform: translate(180px, -140px) scale(1.14); opacity: 1; }
+  36%  { transform: translate(320px, -70px) scale(0.92); opacity: 0.85; }
+  54%  { transform: translate(140px, 50px) scale(1.08); opacity: 0.94; }
+  72%  { transform: translate(-120px, 100px) scale(1.12); opacity: 0.9; }
+  88%  { transform: translate(-200px, -30px) scale(0.96); opacity: 0.82; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.88; }
 }
 @keyframes auroraFloat5 {
-  0%   { transform: translate(0px, 0px) scale(1); opacity: 0.7; }
-  40%  { transform: translate(60px, -40px) scale(1.1); opacity: 0.9; }
-  80%  { transform: translate(-50px, 60px) scale(0.95); opacity: 0.75; }
-  100% { transform: translate(0px, 0px) scale(1); opacity: 0.7; }
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.65; }
+  20%  { transform: translate(130px, -90px) scale(1.1); opacity: 0.85; }
+  40%  { transform: translate(240px, -50px) scale(0.94); opacity: 0.72; }
+  60%  { transform: translate(160px, 120px) scale(1.12); opacity: 0.9; }
+  80%  { transform: translate(-90px, 160px) scale(0.98); opacity: 0.78; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.65; }
 }
 
 
@@ -3248,9 +3279,10 @@ section { position: relative; }
   .clc-title { font-size: 16px; }
 }
 
-/* =================================================================
+/* DISABLED: SECTION BREAK — GOLDEN STARS (uncomment to restore falling star effect)
+   =================================================================
    SECTION BREAK — GOLDEN STARS (Premium falling star animation)
-   ================================================================= */
+   =================================================================
 .section-star-break {
   position: relative;
   width: 100%;
@@ -3265,45 +3297,7 @@ section { position: relative; }
   width: 100%;
   height: 100%;
 }
-
-/* =================================================================
-   HERO AURORA BLOBS — Enhanced smooth mist animation
-   ================================================================= */
-/* Override blob animations for extra smoothness */
-.aurora-blob-1 {
-  animation-name: auroraFloat1;
-  animation-duration: 22s;
-  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  animation-iteration-count: infinite;
-}
-.aurora-blob-2 {
-  animation-name: auroraFloat2;
-  animation-duration: 28s;
-  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  animation-iteration-count: infinite;
-  animation-delay: 3s;
-}
-.aurora-blob-3 {
-  animation-name: auroraFloat3;
-  animation-duration: 34s;
-  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  animation-iteration-count: infinite;
-  animation-delay: 7s;
-}
-.aurora-blob-4 {
-  animation-name: auroraFloat4;
-  animation-duration: 26s;
-  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  animation-iteration-count: infinite;
-  animation-delay: 11s;
-}
-.aurora-blob-5 {
-  animation-name: auroraFloat5;
-  animation-duration: 38s;
-  animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  animation-iteration-count: infinite;
-  animation-delay: 14s;
-}
+*/
 
 /* =================================================================
    CTA — LIVE NOW, ALWAYS ON (3 Premium Contact Cards)

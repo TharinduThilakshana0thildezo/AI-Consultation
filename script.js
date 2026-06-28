@@ -286,9 +286,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-/* =================================================================
+/* DISABLED: GOLDEN STAR SECTION BREAK (uncomment to restore falling star effect)
+   =================================================================
    GOLDEN STAR SECTION BREAK — Canvas particle animation
-   ================================================================= */
+   =================================================================
 (function initStarBreaks() {
   const canvases = document.querySelectorAll('.star-fall-canvas');
   if (!canvases.length) return;
@@ -443,3 +444,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   });
 })();
+*/
