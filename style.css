@@ -47,7 +47,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   margin: 0;
   background: var(--bg-primary);
@@ -3107,7 +3107,7 @@ section { position: relative; }
   align-items: flex-start;
   gap: 48px;
   padding-bottom: 64px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 .footer-brand {
   flex: 0 0 220px;
@@ -3180,103 +3180,323 @@ section { position: relative; }
 @media (max-width: 1100px) {
   .hero-badge { margin-inline: auto; }
   .hero-sub { margin-inline: auto; }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+  .expertise-card-large {
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 40px 36px;
+  }
+
   .footer-grid { gap: 32px; }
   .footer-brand { flex: 0 0 180px; }
-  .comparison-header,
-  .comparison-row { grid-template-columns: 1fr 1fr 1fr; }
 
-  /* Edge Tabs — allow narrower panels */
   .edge-tab-panel { grid-template-columns: 1fr 1fr; }
   .edge-panel-left { padding: 40px 36px; }
 
-  /* Slideshow */
   .ms-content { padding: 44px 40px; }
+
+  .faq-layout {
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+  }
 }
 
 @media (max-width: 900px) {
-  .main-nav, .btn-nav, .btn-nav-phone, .nav-actions { display: none; }
+  .main-nav,
+  .btn-nav,
+  .btn-nav-phone,
+  .nav-actions { display: none; }
   .menu-toggle { display: flex; }
+
+  .site-header { padding: 14px 0; }
+  .header-inner { gap: 16px; }
+
+  .services,
+  .why-us,
+  .expertise,
+  .process,
+  .faq,
+  .book-demo,
+  .inquiries,
+  .cta,
+  .cta-luxury {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .partners { padding: 56px 0; }
+  .section-head { margin-bottom: 48px; }
+
   .services-grid { grid-template-columns: 1fr; }
-  .book-demo-grid { grid-template-columns: 1fr; }
-  .demo-form { grid-template-columns: 1fr; }
+  .service-card { padding: 40px 32px 36px; }
+
+  .expertise-grid { grid-template-columns: 1fr; }
+  .expertise-card-large {
+    grid-column: span 1;
+    padding: 36px 32px;
+  }
+  .expertise-card { padding: 32px 28px; }
+
+  .book-demo-grid { grid-template-columns: 1fr; gap: 48px; }
+  .demo-form { grid-template-columns: 1fr; padding: 32px 28px; }
   .field { grid-column: 1 / -1; }
+
+  .inq-cards { grid-template-columns: 1fr; }
+
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .faq-aside {
+    position: static;
+    text-align: center;
+  }
+
   .footer-grid { flex-wrap: wrap; gap: 24px; }
   .footer-brand { flex: 0 0 100%; }
   .footer-col { flex: 0 0 calc(50% - 24px); }
 
-  /* Comparison — stack on tablet */
+  /* Comparison — feature row + two value columns */
   .comparison-header { grid-template-columns: 1fr 1fr; }
   .comparison-feature-col { display: none; }
   .comparison-row { grid-template-columns: 1fr 1fr; }
-  .comparison-feature { display: none; }
-  .comparison-val { padding: 18px 22px; }
+  .comparison-feature {
+    grid-column: 1 / -1;
+    display: flex;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(201,168,76,0.04);
+    font-weight: 600;
+    color: var(--text-ivory);
+  }
+  .comparison-col { padding: 22px 20px; }
+  .comparison-val { padding: 18px 20px; }
+  .comparison-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
+  }
 
-  /* Edge Tabs — stack vertically on tablet */
   .edge-tab-panel { grid-template-columns: 1fr; }
   .edge-tab-panel.active { display: flex; flex-direction: column; }
-  .edge-panel-left { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); padding: 36px 32px; }
-  .edge-panel-right { padding: 32px; min-height: 320px; }
+  .edge-tab-panels { min-height: auto; }
+  .edge-tab-panel { min-height: auto; }
+  .edge-panel-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    padding: 36px 32px;
+  }
+  .edge-panel-right { padding: 32px; min-height: 280px; }
 
-  /* Slideshow — stack vertically */
   .ms-slide-inner { grid-template-columns: 1fr; min-height: auto; }
-  .ms-content { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); padding: 40px 36px; }
-  .ms-visual { min-height: 280px; padding: 32px; }
+  .ms-content {
+    border-right: none;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    padding: 40px 36px;
+  }
+  .ms-visual { min-height: 260px; padding: 32px; }
 
-  /* CTA luxury */
   .cta-lux-title { font-size: clamp(30px, 5vw, 48px); }
+  .inq-trust-bar { padding: 20px 24px; }
 }
 
 @media (max-width: 640px) {
   .container { padding: 0 20px; }
-  .hero { padding: 140px 0 90px; }
-  .hero-title { font-size: 34px; }
-  .hero-trust-row { flex-direction: column; align-items: center; gap: 12px; margin-top: 32px; }
+
+  .site-header.scrolled { padding: 12px 0; }
+  .logo-text { font-size: 15px; }
+  .logo-mark { width: 36px; height: 36px; font-size: 14px; }
+
+  .hero {
+    padding: 120px 0 80px;
+    min-height: auto;
+  }
+  .hero-title { font-size: clamp(28px, 8.5vw, 40px); }
+  .hero-sub { font-size: 15px; margin-bottom: 32px; }
+  .hero-badge {
+    max-width: 100%;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    padding: 8px 14px;
+    gap: 8px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+  .hero-actions .btn { width: 100%; }
+  .btn-lg { padding: 16px 28px; }
+
+  .hero-trust-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
   .hero-trust-sep { width: 80px; height: 1px; }
-  .hero-trust-item { padding: 0 16px; }
+  .hero-trust-item {
+    padding: 0 16px;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .services,
+  .why-us,
+  .expertise,
+  .process,
+  .faq,
+  .book-demo,
+  .inquiries,
+  .cta,
+  .cta-luxury {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .partners { padding: 44px 0; }
+  .section-head { margin-bottom: 36px; }
+  .section-eyebrow { letter-spacing: 3px; }
+  .section-sub { font-size: 15px; }
+
+  .service-card { padding: 32px 24px 28px; }
+  .service-number { font-size: 56px; top: 16px; right: 20px; }
+  .service-card h3 { font-size: 20px; }
+
+  .expertise-card,
+  .expertise-card-large { padding: 28px 24px; }
+  .metric-num { font-size: 36px; }
+
+  .comparison-col { padding: 18px 16px; }
+  .comparison-feature { padding: 14px 16px; font-size: 13px; }
+  .comparison-val {
+    padding: 14px 16px;
+    align-items: flex-start;
+  }
+  .val-text { font-size: 12px; }
+
   .framework-shell { padding: 24px; border-radius: 22px; }
-  .footer-grid { flex-direction: column; }
-  .footer-col { flex: 0 0 100%; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .inquiries-inner { flex-direction: column; text-align: center; padding: 36px 28px; }
-  .accordion-trigger { padding: 20px; font-size: 15px; }
 
-  /* Comparison on mobile */
-  .comparison-wrapper { overflow-x: auto; }
-  .comparison-header,
-  .comparison-row { min-width: 600px; }
-  .comparison-feature-col { display: block; }
-  .comparison-feature { display: flex; }
-  .comparison-footer { flex-direction: column; text-align: center; }
-
-  /* Edge Tabs — compact on mobile */
-  .edge-tab-btn { padding: 16px 18px; font-size: 12px; gap: 7px; }
+  .edge-tab-btn { padding: 14px 16px; font-size: 11px; gap: 6px; }
   .edge-tab-btn span { display: none; }
   .edge-panel-left { padding: 28px 24px; }
-  .edge-panel-right { padding: 24px; }
+  .edge-panel-right { padding: 24px; min-height: 240px; }
   .edge-panel-visual { max-width: 100%; }
   .epv-stat-grid { grid-template-columns: 1fr 1fr; }
+  .epv-bar-row { grid-template-columns: 64px 1fr 40px; gap: 8px; }
 
-  /* Slideshow on mobile */
   .ms-content { padding: 28px 24px; }
-  .ms-visual { padding: 24px; }
+  .ms-visual { padding: 24px; min-height: 220px; }
   .ms-visual-card { max-width: 100%; }
   .ms-controls { gap: 16px; padding: 20px 0; }
   .ms-btn { width: 38px; height: 38px; }
 
-  /* CTA luxury on mobile */
-  .cta-luxury { padding: 96px 0; }
-  .cta-lux-title { font-size: clamp(28px, 8vw, 42px); }
-  .cta-lux-sub { font-size: 15px; }
-  .cta-lux-actions { flex-direction: column; align-items: stretch; }
-  .btn-lux-primary, .btn-lux-ghost { width: 100%; justify-content: center; }
-  .cta-lux-trust { flex-direction: column; gap: 12px; }
-  .cta-trust-sep { width: 80px; height: 1px; }
-  .cta-lux-divider { width: 240px; }
+  .demo-form { padding: 24px 20px; }
+  .book-demo-grid { gap: 36px; }
 
-  /* CTA live cards on mobile */
+  .inq-title { font-size: clamp(28px, 7vw, 40px); }
+  .inq-card { padding: 22px 20px; }
+  .inq-trust-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+  }
+  .inq-trust-sep { width: 80px; height: 1px; }
+  .inq-trust-item {
+    padding: 0 12px;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .accordion-trigger { padding: 18px 0; font-size: 14px; gap: 12px; }
+  .accordion-panel p { padding: 0 0 22px 40px; font-size: 13px; }
+
+  .footer-grid { flex-direction: column; }
+  .footer-col { flex: 0 0 100%; }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+
+  .inquiries-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 36px 28px;
+  }
+
+  .cta-luxury { padding: 72px 0; }
+  .cta-lux-title { font-size: clamp(26px, 8vw, 38px); }
+  .cta-lux-sub { font-size: 15px; }
+  .cta-lux-actions {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 4px;
+  }
+  .btn-lux-primary,
+  .btn-lux-ghost { width: 100%; justify-content: center; }
+  .cta-lux-trust {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cta-trust-sep { width: 80px; height: 1px; }
+  .cta-lux-divider { width: min(240px, 70vw); }
+
   .cta-live-cards { flex-direction: column; gap: 14px; }
   .cta-live-card { padding: 18px 20px; }
   .clc-title { font-size: 16px; }
+
+  /* Reduce heavy background layers on small screens */
+  .hero-glow-1 { width: 520px; height: 520px; }
+  .hero-glow-2 { width: 400px; height: 400px; }
+  .hero-glow-3 { width: 240px; height: 240px; }
+  .aurora-blob-1 { width: 640px; height: 520px; }
+  .aurora-blob-2 { width: 520px; height: 460px; }
+  .aurora-blob-3 { width: 420px; height: 420px; }
+  .aurora-blob-4 { width: 480px; height: 360px; }
+  .aurora-blob-5 { width: 360px; height: 330px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+
+  .hero-title { font-size: clamp(26px, 9vw, 34px); }
+  .hero-badge { font-size: 8px; letter-spacing: 1px; }
+
+  .comparison-val {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .check-mark,
+  .cross-mark { width: 24px; height: 24px; }
+
+  .epv-stat-grid { grid-template-columns: 1fr; }
+  .epv-team-stats { flex-direction: column; }
+  .epv-ts-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .epv-ts-item:last-child { border-bottom: none; }
+
+  .gold-pill-btn {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+  }
 }
 
 /* DISABLED: SECTION BREAK — GOLDEN STARS (uncomment to restore falling star effect)

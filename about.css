@@ -33,7 +33,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   margin: 0;
   background: var(--bg-primary);
@@ -169,6 +169,7 @@ p { margin: 0; }
   flex-direction: column;
   gap: 5px;
   padding: 6px;
+  z-index: 1100;
 }
 .menu-toggle span {
   width: 22px; height: 1.5px;
@@ -772,36 +773,114 @@ p { margin: 0; }
   .about-layout { grid-template-columns: 240px 1fr; }
 }
 
-@media (max-width: 768px) {
-  .main-nav { display: none; }
+@media (max-width: 900px) {
+  .main-nav,
+  .header-inner > .btn-gold { display: none; }
   .menu-toggle { display: flex; }
 
+  .site-header { padding: 14px 0; }
+  .header-inner { gap: 16px; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+
+  .about-hero {
+    min-height: auto;
+  }
   .about-hero-inner {
     grid-template-columns: 1fr;
     align-items: center;
     padding: 120px 0 0;
     text-align: center;
+    gap: 32px;
   }
-  .about-hero-portrait-wrap {
-    margin: 0 auto;
+  .about-hero-content { padding-bottom: 0; }
+  .about-hero-portrait-wrap { margin: 0 auto; }
+  .about-hero-portrait {
+    width: 220px;
+    height: 280px;
+    border-radius: 18px 18px 0 0;
   }
-  .about-hero-portrait { width: 220px; height: 280px; border-radius: 18px 18px 0 0; }
-  .about-hero-meta { justify-content: center; }
+  .about-portrait-ring { width: 280px; }
+  .about-hero-meta {
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .about-hero-meta-sep {
+    width: 60px;
+    height: 1px;
+  }
+  .about-eyebrow {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-  .about-layout { grid-template-columns: 1fr; }
+  .about-layout {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
   .about-sidebar {
     position: static;
     border-right: none;
     border-bottom: 1px solid rgba(0,0,0,0.08);
     padding: 36px 0 28px;
   }
-  .about-sidebar-nav { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .about-sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .about-sidebar-link {
+    padding: 8px 14px;
+    border-left: none;
+    border-radius: 999px;
+    font-size: 13px;
+  }
   .about-main { padding: 40px 0 60px; }
+  .about-section { padding-bottom: 40px; margin-bottom: 40px; }
+  .about-section-body { font-size: 14px; }
+  .about-quote { padding: 22px 20px; margin: 24px 0; }
+
   .achievements-list { grid-template-columns: 1fr; }
   .about-stats-row { grid-template-columns: 1fr; gap: 12px; }
+
+  .about-aurora-blob-1 { width: 560px; height: 440px; }
+  .about-aurora-blob-2 { width: 480px; height: 400px; }
+  .about-aurora-blob-3 { width: 400px; height: 360px; }
+
+  .about-cta-section { padding: 56px 0; }
+  .about-cta-inner { padding: 0 20px; }
+  .about-footer-inner {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .about-footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+  }
 }
 
 @media (max-width: 480px) {
-  .container { padding: 0 20px; }
-  .about-cta-btns { flex-direction: column; align-items: center; }
+  .container { padding: 0 16px; }
+  .about-layout { padding: 0 16px; }
+
+  .about-hero-inner { padding-top: 108px; }
+  .about-hero-title { font-size: clamp(28px, 9vw, 38px); }
+  .about-hero-portrait { width: 200px; height: 255px; }
+  .about-portrait-ring { width: 240px; }
+
+  .about-sidebar-nav { flex-direction: column; }
+  .about-sidebar-link { width: 100%; border-radius: 8px; }
+  .about-cta-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about-cta-btns .btn { width: 100%; justify-content: center; }
+  .sidebar-cta-card { margin-top: 28px; }
+  .achievement-item { padding: 16px; }
 }

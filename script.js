@@ -9,34 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------- Sticky header on scroll ---------------- */
   const header = document.getElementById('siteHeader');
-  const toggleHeaderState = () => {
-    if (window.scrollY > 40) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  };
-  toggleHeaderState();
-  window.addEventListener('scroll', toggleHeaderState, { passive: true });
+  if (header) {
+    const toggleHeaderState = () => {
+      if (window.scrollY > 40) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    toggleHeaderState();
+    window.addEventListener('scroll', toggleHeaderState, { passive: true });
+  }
 
   /* ---------------- Mobile menu ---------------- */
   const menuToggle = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNav');
 
-  const closeMenu = () => {
-    menuToggle.classList.remove('active');
-    mobileNav.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
+  if (menuToggle && mobileNav) {
+    const closeMenu = () => {
+      menuToggle.classList.remove('active');
+      mobileNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
 
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    menuToggle.classList.toggle('active', isOpen);
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
 
-  mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
 
   /* ---------------- Smooth scroll for in-page anchors ---------------- */
   /* #book-demo redirects to the CTA luxury section (Ready to Future Proof) */
