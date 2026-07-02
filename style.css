@@ -3994,3 +3994,450 @@ section { position: relative; }
   }
 }
 
+/* =================================================================
+   AI RECEPTIONISTS — DIGITAL FRONT DESK SECTION
+   ================================================================= */
+
+.ai-receptionist-section {
+  position: relative;
+  padding: 120px 0 100px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+}
+
+/* Aurora background blobs */
+.ai-rec-bg-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.ai-rec-aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: auroraFloat 14s ease-in-out infinite alternate;
+}
+.ai-rec-aurora-1 {
+  width: 600px; height: 400px;
+  top: -100px; left: -120px;
+  background: radial-gradient(ellipse at center,
+    rgba(201,168,76,0.14) 0%, rgba(120,80,20,0.07) 50%, transparent 80%);
+  animation-duration: 18s;
+}
+.ai-rec-aurora-2 {
+  width: 500px; height: 350px;
+  bottom: -80px; right: -80px;
+  background: radial-gradient(ellipse at center,
+    rgba(30,60,140,0.25) 0%, rgba(20,40,100,0.12) 50%, transparent 80%);
+  animation-duration: 14s;
+  animation-delay: -7s;
+}
+.ai-rec-aurora-3 {
+  width: 350px; height: 300px;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(ellipse at center,
+    rgba(201,168,76,0.06) 0%, transparent 70%);
+  animation-duration: 22s;
+  animation-delay: -3s;
+}
+.ai-rec-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  z-index: 0;
+}
+.ai-receptionist-section .container { position: relative; z-index: 1; }
+
+/* Feature highlights bar */
+.ai-rec-features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 20px 32px;
+  background: var(--glass-bg);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  margin: 40px 0 60px;
+  backdrop-filter: blur(16px);
+}
+.ai-rec-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-ivory);
+  white-space: nowrap;
+}
+.ai-rec-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  background: var(--gold-muted);
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.ai-rec-feature-icon svg {
+  width: 16px; height: 16px;
+  stroke: var(--gold-light);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ai-rec-feature-sep {
+  width: 1px;
+  height: 36px;
+  background: var(--border-gold);
+  flex-shrink: 0;
+}
+
+/* Pricing grid */
+.ai-rec-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.ai-rec-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px;
+  background: rgba(10,18,34,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(20px);
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+}
+.ai-rec-plan:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+}
+.ai-rec-plan--featured {
+  border-color: var(--border-gold-strong);
+  background: rgba(14,22,42,0.92);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.3), 0 32px 80px rgba(0,0,0,0.5);
+  transform: translateY(-8px) scale(1.02);
+}
+.ai-rec-plan--featured:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.5), 0 40px 100px rgba(0,0,0,0.6);
+}
+.ai-rec-plan-glow {
+  position: absolute;
+  top: -40px; left: 50%;
+  transform: translateX(-50%);
+  width: 180px; height: 80px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.30) 0%, transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.ai-rec-plan-popular-badge {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #b8892b, #e4c76b, #b8892b);
+  color: #0a0e18;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.ai-rec-plan-header { margin-bottom: 28px; }
+.ai-rec-plan-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.ai-rec-plan-price {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.ai-rec-price-currency {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-ivory);
+  margin-bottom: 6px;
+}
+.ai-rec-price-amount {
+  font-size: 3.6rem;
+  font-weight: 800;
+  color: var(--text-white);
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+.ai-rec-plan--featured .ai-rec-price-amount { color: var(--gold-light); }
+.ai-rec-price-period {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.ai-rec-plan-setup {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.ai-rec-plan-tagline {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ai-rec-plan-features {
+  list-style: none;
+  padding: 0; margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.ai-rec-plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-ivory);
+  line-height: 1.4;
+}
+.ai-rec-plan-features li svg {
+  width: 16px; height: 16px;
+  stroke: var(--green-soft);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ai-rec-plan-btn {
+  display: block;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+  cursor: pointer;
+}
+.ai-rec-plan-btn--gold {
+  background: linear-gradient(135deg, #b8892b 0%, #e4c76b 50%, #b8892b 100%);
+  background-size: 200% 100%;
+  color: #0a0e18;
+}
+.ai-rec-plan-btn--gold:hover {
+  background-position: 100% 0;
+  box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+  transform: translateY(-2px);
+}
+.ai-rec-plan-btn--outline {
+  background: transparent;
+  color: var(--text-ivory);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.ai-rec-plan-btn--outline:hover {
+  border-color: var(--border-gold);
+  color: var(--gold-light);
+  background: var(--gold-muted);
+  transform: translateY(-2px);
+}
+
+/* Trust signals row */
+.ai-rec-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 20px 32px;
+  background: var(--glass-bg);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-lg);
+  margin-bottom: 60px;
+  backdrop-filter: blur(12px);
+}
+.ai-rec-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.ai-rec-trust-item svg {
+  width: 18px; height: 18px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.ai-rec-trust-sep {
+  width: 1px; height: 28px;
+  background: var(--divider);
+  flex-shrink: 0;
+}
+
+/* AI Business Review card */
+.ai-biz-review-card {
+  position: relative;
+  background: rgba(10,18,34,0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  backdrop-filter: blur(24px);
+}
+.ai-biz-review-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+}
+.ai-biz-review-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  padding: 52px 52px 52px 52px;
+  align-items: center;
+}
+.ai-biz-review-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.ai-biz-review-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin: 0 0 16px;
+  line-height: 1.25;
+}
+.ai-biz-review-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+.ai-biz-review-steps {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ai-biz-review-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 0.9rem;
+  color: var(--text-ivory);
+  line-height: 1.4;
+}
+.ai-biz-review-steps li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  background: var(--gold-muted);
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.ai-biz-review-price-card {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid var(--border-gold-strong);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  text-align: center;
+}
+.ai-biz-review-price-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.ai-biz-review-price {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.ai-biz-review-price-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.ai-biz-review-price-card .btn-gold {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.ai-biz-review-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Gold text utility for the section title dot */
+.gold-text { color: var(--gold); }
+
+/* ---- Responsive: AI Receptionist ---- */
+@media (max-width: 1024px) {
+  .ai-rec-pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
+  .ai-rec-plan--featured { transform: none; }
+  .ai-biz-review-inner { grid-template-columns: 1fr; }
+  .ai-biz-review-right { display: flex; justify-content: center; }
+  .ai-biz-review-price-card { max-width: 380px; width: 100%; }
+}
+@media (max-width: 700px) {
+  .ai-receptionist-section { padding: 80px 0 70px; }
+  .ai-rec-features { padding: 12px 16px; flex-direction: column; }
+  .ai-rec-feature-sep { width: 100%; height: 1px; }
+  .ai-rec-trust-row { flex-direction: column; gap: 4px; }
+  .ai-rec-trust-sep { width: 100%; height: 1px; }
+  .ai-biz-review-inner { padding: 32px 24px; gap: 32px; }
+  .ai-biz-review-title { font-size: 1.4rem; }
+}
+
